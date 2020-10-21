@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jjdxm-ijkplayer/jjdxm-ijkplayer.iml" filepath="$PROJECT_DIR$/jjdxm-ijkplayer/jjdxm-ijkplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jjdxm_ijkplayer.iml" filepath="$PROJECT_DIR$/jjdxm_ijkplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jjdxm_ijkplayer-master.iml" filepath="$PROJECT_DIR$/.idea/modules/jjdxm_ijkplayer-master.iml" group="jjdxm_ijkplayer-master" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/jjdxm_ijkplayer-master-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/jjdxm_ijkplayer-master-app.iml" group="jjdxm_ijkplayer-master/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jjdxm-ijkplayer/jjdxm_ijkplayer-master-jjdxm-ijkplayer.iml" filepath="$PROJECT_DIR$/.idea/modules/jjdxm-ijkplayer/jjdxm_ijkplayer-master-jjdxm-ijkplayer.iml" group="jjdxm_ijkplayer-master/jjdxm-ijkplayer" />
+    </modules>
+  </component>
+</project>

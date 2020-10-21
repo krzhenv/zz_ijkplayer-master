@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ijkplayer</string>
+    <string name="qian">前摄像</string>
+    <string name="hou">后摄像</string>
+    <string name="zuo">左摄像</string>
+    <string name="you">右摄像</string>
+    <string name="shangdi">上帝视角</string>
+</resources>
