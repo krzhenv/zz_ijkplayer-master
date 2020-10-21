@@ -1,4 +1,4 @@
-# [jjdxm_ijkplayer][project] #
+# [zz_ijkplayer][project] #
 
 ### Copyright notice ###
 
