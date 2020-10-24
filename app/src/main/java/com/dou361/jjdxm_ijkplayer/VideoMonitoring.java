@@ -3,49 +3,30 @@ package com.dou361.jjdxm_ijkplayer;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.os.PowerManager;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.dou361.ijkplayer.bean.VideoijkBean;
-import com.dou361.ijkplayer.listener.OnShowThumbnailListener;
 import com.dou361.ijkplayer.widget.IjkVideoView;
 import com.dou361.ijkplayer.widget.PlayStateParams;
 import com.dou361.ijkplayer.widget.PlayerView;
-import com.dou361.jjdxm_ijkplayer.bean.LiveBean;
-import com.dou361.jjdxm_ijkplayer.module.ApiServiceUtils;
 import com.dou361.jjdxm_ijkplayer.utlis.MediaUtils;
 
-import java.io.File;
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import tv.danmaku.ijk.media.player.IMediaPlayer;
-import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class VideoMonitoring extends Activity implements View.OnClickListener {
 
     private PlayerView player;
     private Context mContext;
-    IjkVideoView ijkVideoView ;
     private List<VideoijkBean> list;
     private PowerManager.WakeLock wakeLock;
     View rootView;
@@ -56,7 +37,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.mContext = this;
-        rootView = getLayoutInflater().from(this).inflate(R.layout.activity_main, null);
+        rootView = getLayoutInflater().from(this).inflate(R.layout.activity_videomonitoring, null);
         setContentView(rootView);
 //        setContentView(R.layout.activity_main);
 //        ButterKnife.bind(this);
@@ -139,6 +120,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             .hideMenu(false)
                             .hideCenterPlayer(true)
                             .hideRotation(true) //隐藏旋转按钮
+                            .setChargeTie(true,480)
 //                            .showThumbnail(new OnShowThumbnailListener() {
 //                                @Override
 //                                public void onShowThumbnail(ImageView ivThumbnail) {
@@ -175,7 +157,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 player = new PlayerView(this, rootView) {
                     @Override
                     public PlayerView toggleProcessDurationOrientation() {
-                        hideSteam(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//                        hideSteam(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                         return setProcessDurationOrientation(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT ? PlayStateParams.PROCESS_PORTRAIT : PlayStateParams.PROCESS_LANDSCAPE);
                     }
 
@@ -191,6 +173,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         .hideSteam(false)
                         .hideRotation(true) //隐藏旋转按钮
                         .hideCenterPlayer(true)
+                        .setChargeTie(true,480)
 //                        .showThumbnail(new OnShowThumbnailListener() {
 //                            @Override
 //                            public void onShowThumbnail(ImageView ivThumbnail) {
@@ -226,7 +209,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 player = new PlayerView(this, rootView) {
                     @Override
                     public PlayerView toggleProcessDurationOrientation() {
-                        hideSteam(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//                        hideSteam(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                         return setProcessDurationOrientation(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT ? PlayStateParams.PROCESS_PORTRAIT : PlayStateParams.PROCESS_LANDSCAPE);
                     }
 
@@ -242,6 +225,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         .hideSteam(false)
                         .hideRotation(true) //隐藏旋转按钮
                         .hideCenterPlayer(true)
+                        .setChargeTie(true,480)
 //                        .showThumbnail(new OnShowThumbnailListener() {
 //                            @Override
 //                            public void onShowThumbnail(ImageView ivThumbnail) {
@@ -277,7 +261,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 player = new PlayerView(this, rootView) {
                     @Override
                     public PlayerView toggleProcessDurationOrientation() {
-                        hideSteam(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//                        hideSteam(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                         return setProcessDurationOrientation(getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT ? PlayStateParams.PROCESS_PORTRAIT : PlayStateParams.PROCESS_LANDSCAPE);
                     }
 
@@ -293,6 +277,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         .hideSteam(false)
                         .hideRotation(true) //隐藏旋转按钮
                         .hideCenterPlayer(true)
+                        .setChargeTie(true,480)
 //                        .showThumbnail(new OnShowThumbnailListener() {
 //                            @Override
 //                            public void onShowThumbnail(ImageView ivThumbnail) {
@@ -341,10 +326,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         .setProcessDurationOrientation(PlayStateParams.PROCESS_PORTRAIT)
                         .setScaleType(PlayStateParams.fillparent)
                         .forbidTouch(false)
-                        .hideSteam(false)
                         .hideMenu(false)
+                        .hideSteam(true)
                         .hideRotation(true) //隐藏旋转按钮
                         .hideCenterPlayer(true)
+                        .setChargeTie(true,480)
 //                        .showThumbnail(new OnShowThumbnailListener() {
 //                            @Override
 //                            public void onShowThumbnail(ImageView ivThumbnail) {

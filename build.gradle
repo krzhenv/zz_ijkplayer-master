@@ -35,7 +35,7 @@ ext {
 
     targetSdkVersion = 22
     //主程序版本
-    minSdkVersion = 15
+    minSdkVersion = 16
     versionCode = 1
     versionName = "1.0.0.01"
     //library版本

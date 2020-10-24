@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.dou361.jjdxm_ijkplayer.MainActivity">
+    tools:context="com.dou361.jjdxm_ijkplayer.VideoMonitoring">
 
     <include
         layout="@layout/simple_player_view_player"
         android:layout_width="match_parent"
-        android:layout_height="180dp"/>
+        android:layout_height="182dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/background"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -25,51 +24,5 @@
             android:text="activity_h" />
 
 
-        <Spinner
-            android:id="@+id/Spinner_VIdeo_Model"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/Video_Model"
-           />
-        <Button
-            android:id="@+id/qian_Click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/qian"
-           >
-
-        </Button>
-
-        <Button
-            android:id="@+id/you_Click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/you"
-            >
-          </Button>
-
-        <Button
-            android:id="@+id/zuo_Click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/zuo"
-           >
-        </Button>
-
-        <Button
-            android:id="@+id/hou_Click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hou"
-            >
-        </Button>
-
-        <Button
-            android:id="@+id/shangdi_Click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shangdi"
-            >
-        </Button>
     </LinearLayout>
 </LinearLayout>

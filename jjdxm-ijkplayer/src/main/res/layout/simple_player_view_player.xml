@@ -104,7 +104,7 @@
             android:gravity="center"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:text="试看时间已到请购买继续观看"
+            android:text="8分钟时间已到"
             android:textColor="@android:color/white"/>
 
         <TextView
@@ -114,7 +114,7 @@
             android:gravity="center"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:text="购买"
+            android:text="如需继续请点击开始按钮！"
             android:textColor="@android:color/white"/>
     </LinearLayout>
 

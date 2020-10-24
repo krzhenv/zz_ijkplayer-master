@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    tools:context=".MainActivity">
+    tools:context=".VideoMonitoring">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintlayout1"
@@ -44,8 +44,17 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintlayout1"
         >
 
+        <RadioButton
+            android:id="@+id/lightController"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开灯/关灯"
+            tools:ignore="MissingConstraints">
 
-        <Button
+        </RadioButton>
+
+
+        <RadioButton
             android:id="@+id/qian_Click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,10 +65,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.174">
+        </RadioButton>
 
-        </Button>
-
-        <Button
+        <RadioButton
             android:id="@+id/you_Click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,9 +79,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.539">
 
-        </Button>
+        </RadioButton>
 
-        <Button
+        <RadioButton
             android:id="@+id/zuo_Click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,9 +93,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.539">
 
-        </Button>
+        </RadioButton>
 
-        <Button
+        <RadioButton
             android:id="@+id/hou_Click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,9 +107,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.992">
 
-        </Button>
+        </RadioButton>
 
-        <Button
+        <RadioButton
             android:id="@+id/shangdi_Click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -113,6 +121,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.539">
 
-        </Button>
+        </RadioButton>
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

@@ -1112,7 +1112,7 @@ public class PlayerView {
             currentPosition = videoView.getCurrentPosition();
         } else {
             /**直播*/
-            currentPosition = -1;
+            currentPosition = videoView.getCurrentPosition();
         }
         return currentPosition;
     }
