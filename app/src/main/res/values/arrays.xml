@@ -4,4 +4,9 @@
         <item>原始视频</item>
         <item>融合视频</item>
     </string-array>
+
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
 </resources>

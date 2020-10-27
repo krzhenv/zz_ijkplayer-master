@@ -8,4 +8,8 @@
     <string name="Video">视频监控</string>
     <string name="park">出泊车</string>
     <string name="call">叫车</string>
+    <string name="speed">速度</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
 </resources>

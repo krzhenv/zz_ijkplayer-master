@@ -119,8 +119,9 @@ public class VideoMonitoring extends Activity implements View.OnClickListener {
                             .hideSteam(false)
                             .hideMenu(false)
                             .hideCenterPlayer(true)
+                            .setNetWorkTypeTie(true)
                             .hideRotation(true) //隐藏旋转按钮
-                            .setChargeTie(true,480)
+                            .setChargeTie(true,480)//设置最长播放时间
 //                            .showThumbnail(new OnShowThumbnailListener() {
 //                                @Override
 //                                public void onShowThumbnail(ImageView ivThumbnail) {
@@ -133,7 +134,6 @@ public class VideoMonitoring extends Activity implements View.OnClickListener {
 //                                }
 //                            })
                             .setPlaySource(list)
-//                            .setChargeTie(true,60)
                             .startPlay();
                 }
                 break;
