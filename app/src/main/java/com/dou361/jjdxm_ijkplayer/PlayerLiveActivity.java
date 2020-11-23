@@ -91,8 +91,8 @@ public class PlayerLiveActivity extends Activity {
                     public void onShowThumbnail(ImageView ivThumbnail) {
                         Glide.with(mContext)
                                 .load("http://pic2.nipic.com/20090413/406638_125424003_2.jpg")
-                                .placeholder(R.color.cl_default)
-                                .error(R.color.cl_error)
+//                                .placeholder(R.color.cl_default)
+//                                .error(R.color.cl_error)
                                 .into(ivThumbnail);
                     }
                 });

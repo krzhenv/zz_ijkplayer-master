@@ -22,16 +22,31 @@
     </Button>
 
     <Button
-        android:id="@+id/park"
+        android:id="@+id/RemoteControl_remove"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/park"
+        android:text="@string/RemoteControl_remove"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.209">
+
+    </Button>
+
+
+    <Button
+        android:id="@+id/au_park"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/au_park"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356">
 
     </Button>
 
@@ -45,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349">
+        app:layout_constraintVertical_bias="0.499">
 
     </Button>
 

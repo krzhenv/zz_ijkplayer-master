@@ -32,7 +32,7 @@ public class Parkin extends Activity implements View.OnClickListener{
         switch (view.getId()) {
             case R.id.remote_control:
                 /**遥控泊车*/
-                Intent intent1 = new Intent(Parkin.this, RemoteControlActivity.class);
+                Intent intent1 = new Intent(Parkin.this, RemoteControlInitial.class);
                 startActivity(intent1);
                 break;
 //            case R.id.autoParking:

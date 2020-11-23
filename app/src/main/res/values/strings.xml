@@ -1,12 +1,13 @@
 <resources>
-    <string name="app_name">视频监控</string>
+    <string name="app_name">车云协同</string>
     <string name="qian">前摄像</string>
     <string name="hou">后摄像</string>
     <string name="zuo">左摄像</string>
     <string name="you">右摄像</string>
     <string name="shangdi">上帝视角</string>
     <string name="Video">视频监控</string>
-    <string name="park">出泊车</string>
+    <string name="RemoteControl_remove">遥控挪车</string>
+    <string name="au_park">自动出泊车</string>
     <string name="call">叫车</string>
     <string name="speed">速度</string>
     <string name="dummy_button">Dummy Button</string>

@@ -33,6 +33,7 @@ import com.dou361.ijkplayer.adapter.StreamSelectAdapter;
 import com.dou361.ijkplayer.bean.VideoijkBean;
 import com.dou361.ijkplayer.listener.OnControlPanelVisibilityChangeListener;
 import com.dou361.ijkplayer.listener.OnPlayerBackListener;
+import com.dou361.ijkplayer.listener.OnPlayerStartOrPauseListener;
 import com.dou361.ijkplayer.listener.OnShowThumbnailListener;
 import com.dou361.ijkplayer.utils.NetworkUtils;
 
@@ -386,6 +387,12 @@ public class PlayerView {
      * 视频的返回键监听
      */
     private OnPlayerBackListener mPlayerBack;
+
+    /**
+     * 视频的播放暂停键监听
+     */
+    private OnPlayerStartOrPauseListener mPlayerStartOrPause;
+
     /**
      * 视频播放时信息回调
      */
@@ -414,6 +421,9 @@ public class PlayerView {
                 if (videoView.isPlaying()) {
                     if (isLive) {
                         videoView.stopPlayback();
+                        if (mPlayerStartOrPause != null) {
+                            mPlayerStartOrPause.onStartOrPause();
+                        }
                     } else {
                         pausePlay();
                     }
@@ -893,6 +903,14 @@ public class PlayerView {
      */
     public PlayerView setPlayerBackListener(OnPlayerBackListener listener) {
         this.mPlayerBack = listener;
+        return this;
+    }
+
+    /**
+     * 设置播放器中的播放暂停键监听
+     */
+    public PlayerView setPlayerStartOrPauseListener(OnPlayerStartOrPauseListener listener) {
+        this.mPlayerStartOrPause = listener;
         return this;
     }
 
