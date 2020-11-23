@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/remove_bottom_box"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+
+    <com.dou361.jjdxm_ijkplayer.ScalableImageView
+        android:id="@+id/steering_wheel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="matrix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        />
+
+
+<!--    <Button-->
+<!--        android:id="@+id/getPathCondition"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="获取路况"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.383"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
+
+<!--    </Button>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/startendController"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:text="开始挪车"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.749"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
+
+<!--    </Button>-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp">
+
+        <ImageButton
+            android:id="@+id/forward"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_alignTop="@id/steering_wheel"
+            android:scaleType="fitXY"
+            android:src="@mipmap/forward">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/backward"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_below="@id/forward"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/backward">
+        </ImageButton>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
