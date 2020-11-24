@@ -27,7 +27,7 @@
             android:screenOrientation="landscape">
         </activity>
         <activity
-            android:name=".Parkin"
+            android:name=".AutoPark"
             android:screenOrientation="portrait" />
         <activity android:name=".MainActivity">
             <intent-filter>

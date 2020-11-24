@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.au_park:
                 /**自动出泊车*/
-                startActivity(Parkin.class);
+                startActivity(AutoPark.class);
                 break;
 
             case R.id.call:

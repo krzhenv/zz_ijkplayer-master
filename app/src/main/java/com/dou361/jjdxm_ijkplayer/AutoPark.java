@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 import butterknife.OnClick;
 
-public class Parkin extends Activity implements View.OnClickListener{
+public class AutoPark extends Activity implements View.OnClickListener{
 
     ImageButton autoParking,remoteControl;
 
@@ -18,7 +18,7 @@ public class Parkin extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parkin);
+        setContentView(R.layout.activity_autopark);
 
 //        autoParking=findViewById(R.id.autoParking);
         remoteControl=findViewById(R.id.remote_control);
@@ -32,7 +32,7 @@ public class Parkin extends Activity implements View.OnClickListener{
         switch (view.getId()) {
             case R.id.remote_control:
                 /**遥控泊车*/
-                Intent intent1 = new Intent(Parkin.this, RemoteControlInitial.class);
+                Intent intent1 = new Intent(AutoPark.this, RemoteControlInitial.class);
                 startActivity(intent1);
                 break;
 //            case R.id.autoParking:
