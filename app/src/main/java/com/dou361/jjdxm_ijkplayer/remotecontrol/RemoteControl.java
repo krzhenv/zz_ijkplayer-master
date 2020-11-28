@@ -1,4 +1,4 @@
-package com.dou361.jjdxm_ijkplayer;
+package com.dou361.jjdxm_ijkplayer.remotecontrol;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -11,7 +11,6 @@ import android.os.PowerManager;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -26,6 +25,8 @@ import com.dou361.ijkplayer.listener.OnPlayerStartOrPauseListener;
 import com.dou361.ijkplayer.listener.OnShowThumbnailListener;
 import com.dou361.ijkplayer.widget.PlayStateParams;
 import com.dou361.ijkplayer.widget.PlayerView;
+import com.dou361.jjdxm_ijkplayer.R;
+import com.dou361.jjdxm_ijkplayer.videomonitoring.VideoMonitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -159,7 +160,7 @@ public class RemoteControl extends Activity {
                                     @Override
                                     public void onClick(DialogInterface arg0, int arg1) {
                                         finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                        Intent intent=new Intent(RemoteControl.this, VideoMonitor.class);
                                         startActivity(intent);
                                     }
                                 });
@@ -196,7 +197,7 @@ public class RemoteControl extends Activity {
                                                 @Override
                                                 public void onClick(DialogInterface arg0, int arg1) {
                                                     finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                                    Intent intent=new Intent(RemoteControl.this, VideoMonitor.class);
                                                     startActivity(intent);
                                                 }
                                             });
@@ -248,7 +249,7 @@ public class RemoteControl extends Activity {
                                     @Override
                                     public void onClick(DialogInterface arg0, int arg1) {
                                         finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                        Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
                                         startActivity(intent);
                                     }
                                 });
@@ -284,7 +285,7 @@ public class RemoteControl extends Activity {
                                                 @Override
                                                 public void onClick(DialogInterface arg0, int arg1) {
                                                     finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
                                                     startActivity(intent);
                                                 }
                                             });
@@ -339,7 +340,7 @@ public class RemoteControl extends Activity {
                                     @Override
                                     public void onClick(DialogInterface arg0, int arg1) {
                                         finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                        Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
                                         startActivity(intent);
                                     }
                                 });
@@ -375,7 +376,7 @@ public class RemoteControl extends Activity {
                                                 @Override
                                                 public void onClick(DialogInterface arg0, int arg1) {
                                                     finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
                                                     startActivity(intent);
                                                 }
                                             });
@@ -427,7 +428,7 @@ public class RemoteControl extends Activity {
                                     @Override
                                     public void onClick(DialogInterface arg0, int arg1) {
                                         finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                        Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
                                         startActivity(intent);
                                     }
                                 });
@@ -463,7 +464,7 @@ public class RemoteControl extends Activity {
                                                 @Override
                                                 public void onClick(DialogInterface arg0, int arg1) {
                                                     finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
                                                     startActivity(intent);
                                                 }
                                             });
@@ -518,7 +519,7 @@ public class RemoteControl extends Activity {
                                     @Override
                                     public void onClick(DialogInterface arg0, int arg1) {
                                         finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                        Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
                                         startActivity(intent);
                                     }
                                 });
@@ -554,7 +555,7 @@ public class RemoteControl extends Activity {
                                                 @Override
                                                 public void onClick(DialogInterface arg0, int arg1) {
                                                     finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitoring.class);
+                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
                                                     startActivity(intent);
                                                 }
                                             });

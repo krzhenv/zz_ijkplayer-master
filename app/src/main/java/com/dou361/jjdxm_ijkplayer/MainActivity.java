@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.dou361.jjdxm_ijkplayer.autopark.AutoPark;
+import com.dou361.jjdxm_ijkplayer.remotecontrol.RemoteControlInitial;
+import com.dou361.jjdxm_ijkplayer.videomonitoring.VideoMonitor;
+
 import butterknife.OnClick;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -35,7 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.video:
                 /**视频监控*/
-                startActivity(VideoMonitoring.class);
+                startActivity(VideoMonitor.class);
                 break;
             case R.id.RemoteControl_remove:
                 /**遥控挪车*/
@@ -46,10 +50,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(AutoPark.class);
                 break;
 
-            case R.id.call:
-                /**叫车*/
-                startActivity(PlayerActivity.class);
-                break;
+//            case R.id.call:
+//                /**叫车*/
+//                startActivity(PlayerActivity.class);
+//                break;
         }
     }
 

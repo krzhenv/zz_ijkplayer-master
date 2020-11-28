@@ -1,4 +1,4 @@
-package com.dou361.jjdxm_ijkplayer;
+package com.dou361.jjdxm_ijkplayer.remotecontrol;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.animation.RotateAnimation;
+
+import com.dou361.jjdxm_ijkplayer.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +66,7 @@ public class ScalableImageView extends androidx.appcompat.widget.AppCompatImageV
         matrix = new Matrix();
         cacheMatrix = new Matrix();
         mode = Mode.NONE;
-        bitmap= BitmapFactory.decodeResource(getResources(), R.mipmap.steering_wheel);  //避免OOM
+        bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.steering_wheel);  //避免OOM
         setImageBitmap(bitmap);
     }
 

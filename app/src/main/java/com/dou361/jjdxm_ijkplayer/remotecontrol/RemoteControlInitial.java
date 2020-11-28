@@ -1,6 +1,4 @@
-package com.dou361.jjdxm_ijkplayer;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.dou361.jjdxm_ijkplayer.remotecontrol;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -11,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.dou361.jjdxm_ijkplayer.R;
 
 public class RemoteControlInitial extends Activity {
 
