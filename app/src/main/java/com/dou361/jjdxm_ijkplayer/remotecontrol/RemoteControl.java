@@ -99,7 +99,6 @@ public class RemoteControl extends Activity {
         });
 
 
-
         //下拉单选按钮
         Video_Modul_Spinner = (Spinner)findViewById(R.id.Spinner_VIdeo_Model);
         Video_Modul_Spinner.setSelection(0);//进入不会自动播放
@@ -213,359 +212,29 @@ public class RemoteControl extends Activity {
                         case 1: {
                             /**后摄像*/
                             String url3 = "http://ivi.bupt.edu.cn/hls/cctv2.m3u8";
-                            player = new PlayerView(mActivity, rootView)
-                                    .setProcessDurationOrientation(PlayStateParams.PROCESS_PORTRAIT)
-                                    .setScaleType(PlayStateParams.fillparent) //视频界面剪裁设置
-                                    .forbidTouch(false)
-                                    .hideSteam(true)
-                                    .hideMenu(false)
-                                    .hideCenterPlayer(true)
-                                    .hideBack(false)
-                                    .setOnlyFullScreen(true)
-                                    .setNetWorkTypeTie(false)
-                                    .hideRotation(true)
-                                    .hideFullscreen(true)
-                                    .setChargeTie(true, 480)//设置最长播放时间
-                                    .showThumbnail(new OnShowThumbnailListener() {
-                                        @Override
-                                        public void onShowThumbnail(ImageView ivThumbnail) {
-//                                 加载前显示的缩略图
-                                            Glide.with(mContext)
-                                                    .load("http://pic2.nipic.com/20090413/406638_125424003_2.jpg")
-                                                    .placeholder(R.color.cl_default) //加载成功之前占位图
-                                                    .error(R.color.cl_error)//加载错误之后的错误图
-                                                    .into(ivThumbnail);
-                                        }
-                                    })
-                                    .setPlayerBackListener(new OnPlayerBackListener() {
-                            @Override
-                            public void onPlayerBack() {
-                                //对话框
-                                AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
-                                builder.setIcon(R.drawable.shangbackground);
-                                builder.setTitle("结束挪车");//设置对话框的标题
-                                builder.setMessage("您已确定车辆已经抵达目标位置并结束挪车操作吗？");//设置对话框的内容
-                                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
-                                        startActivity(intent);
-                                    }
-                                });
-                                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {  //取消按钮
-
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        Toast.makeText(RemoteControl.this, "取消成功",Toast.LENGTH_SHORT).show();
-                                        player.startPlay();
-                                    }
-                                });
-                                AlertDialog b=builder.create();
-                                b.show();
-                                player.onPause();
-                            }
-                        })
-                                    .setPlayerStartOrPauseListener(new OnPlayerStartOrPauseListener() {
-                                        @Override
-                                        public void onStartOrPause() {
-                                            //对话框
-                                            AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
-                                            builder.setIcon(R.drawable.shangbackground);
-                                            builder.setTitle("暂停挪车");//设置对话框的标题
-                                            builder.setMessage("挪车已暂停，是否继续挪车？");//设置对话框的内容
-                                            builder.setPositiveButton("继续", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
-                                                @Override
-                                                public void onClick(DialogInterface arg0, int arg1) {
-                                                    player.startPlay();
-                                                }
-                                            });
-                                            builder.setNegativeButton("结束", new DialogInterface.OnClickListener() {  //取消按钮
-
-                                                @Override
-                                                public void onClick(DialogInterface arg0, int arg1) {
-                                                    finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
-                                                    startActivity(intent);
-                                                }
-                                            });
-                                            AlertDialog b=builder.create();
-                                            b.show();
-                                        }
-                                    })
-                                    .setPlaySource(url3)
-                                    .startPlay();
+                            playVideoUrl(url3);
 
                         }
                         break;
 
                         case 2: {
                             /**左摄像*/
-                            //有部分视频加载有问题，这个视频是有声音显示不出图像的，没有解决http://fzkt-biz.oss-cn-hangzhou.aliyuncs.com/vedio/2f58be65f43946c588ce43ea08491515.mp4
-                            //这里模拟一个本地视频的播放，视频需要将testvideo文件夹的视频放到安卓设备的内置sd卡根目录中
                             String url4 = "http://ivi.bupt.edu.cn/hls/cctv3.m3u8";
-                            player = new PlayerView(mActivity, rootView)
-                                    .setProcessDurationOrientation(PlayStateParams.PROCESS_PORTRAIT)
-                                    .setScaleType(PlayStateParams.fillparent) //视频界面剪裁设置
-                                    .forbidTouch(false)
-                                    .hideSteam(true)
-                                    .hideMenu(false)
-                                    .hideCenterPlayer(true)
-                                    .hideBack(false)
-                                    .setOnlyFullScreen(true)
-                                    .setNetWorkTypeTie(false)
-                                    .hideRotation(true)
-                                    .hideFullscreen(true)
-                                    .setChargeTie(true, 480)//设置最长播放时间
-                                    .showThumbnail(new OnShowThumbnailListener() {
-                                        @Override
-                                        public void onShowThumbnail(ImageView ivThumbnail) {
-//                                 加载前显示的缩略图
-                                            Glide.with(mContext)
-                                                    .load("http://pic2.nipic.com/20090413/406638_125424003_2.jpg")
-                                                    .placeholder(R.color.cl_default) //加载成功之前占位图
-                                                    .error(R.color.cl_error)//加载错误之后的错误图
-                                                    .into(ivThumbnail);
-                                        }
-                                    })
-                                    .setPlayerBackListener(new OnPlayerBackListener() {
-                            @Override
-                            public void onPlayerBack() {
-                                //对话框
-                                AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
-                                builder.setIcon(R.drawable.shangbackground);
-                                builder.setTitle("结束挪车");//设置对话框的标题
-                                builder.setMessage("您已确定车辆已经抵达目标位置并结束挪车操作吗？");//设置对话框的内容
-                                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
-                                        startActivity(intent);
-                                    }
-                                });
-                                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {  //取消按钮
-
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        Toast.makeText(RemoteControl.this, "取消成功",Toast.LENGTH_SHORT).show();
-                                        player.startPlay();
-                                    }
-                                });
-                                AlertDialog b=builder.create();
-                                b.show();
-                                player.onPause();
-                            }
-                        })
-                                    .setPlayerStartOrPauseListener(new OnPlayerStartOrPauseListener() {
-                                        @Override
-                                        public void onStartOrPause() {
-                                            //对话框
-                                            AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
-                                            builder.setIcon(R.drawable.shangbackground);
-                                            builder.setTitle("暂停挪车");//设置对话框的标题
-                                            builder.setMessage("挪车已暂停，是否继续挪车？");//设置对话框的内容
-                                            builder.setPositiveButton("继续", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
-                                                @Override
-                                                public void onClick(DialogInterface arg0, int arg1) {
-                                                    player.startPlay();
-                                                }
-                                            });
-                                            builder.setNegativeButton("结束", new DialogInterface.OnClickListener() {  //取消按钮
-
-                                                @Override
-                                                public void onClick(DialogInterface arg0, int arg1) {
-                                                    finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
-                                                    startActivity(intent);
-                                                }
-                                            });
-                                            AlertDialog b=builder.create();
-                                            b.show();
-                                        }
-                                    })
-                                    .setPlaySource(url4)
-                                    .startPlay();
+                            playVideoUrl(url4);
                         }
                         break;
 
                         case 3: {
                             /**右摄像*/
                             String url5 = "http://ivi.bupt.edu.cn/hls/cctv4.m3u8";
-                            player = new PlayerView(mActivity, rootView)
-                                    .setProcessDurationOrientation(PlayStateParams.PROCESS_PORTRAIT)
-                                    .setScaleType(PlayStateParams.fillparent) //视频界面剪裁设置
-                                    .forbidTouch(false)
-                                    .hideSteam(true)
-                                    .hideMenu(false)
-                                    .hideCenterPlayer(true)
-                                    .hideBack(false)
-                                    .setOnlyFullScreen(true)
-                                    .setNetWorkTypeTie(false)
-                                    .hideRotation(true)
-                                    .hideFullscreen(true)
-                                    .setChargeTie(true, 480)//设置最长播放时间
-                                    .showThumbnail(new OnShowThumbnailListener() {
-                                        @Override
-                                        public void onShowThumbnail(ImageView ivThumbnail) {
-//                                 加载前显示的缩略图
-                                            Glide.with(mContext)
-                                                    .load("http://pic2.nipic.com/20090413/406638_125424003_2.jpg")
-                                                    .placeholder(R.color.cl_default) //加载成功之前占位图
-                                                    .error(R.color.cl_error)//加载错误之后的错误图
-                                                    .into(ivThumbnail);
-                                        }
-                                    })
-                                    .setPlayerBackListener(new OnPlayerBackListener() {
-                            @Override
-                            public void onPlayerBack() {
-                                //对话框
-                                AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
-                                builder.setIcon(R.drawable.shangbackground);
-                                builder.setTitle("结束挪车");//设置对话框的标题
-                                builder.setMessage("您已确定车辆已经抵达目标位置并结束挪车操作吗？");//设置对话框的内容
-                                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
-                                        startActivity(intent);
-                                    }
-                                });
-                                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {  //取消按钮
-
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        Toast.makeText(RemoteControl.this, "取消成功",Toast.LENGTH_SHORT).show();
-                                        player.startPlay();
-                                    }
-                                });
-                                AlertDialog b=builder.create();
-                                b.show();
-                                player.onPause();
-                            }
-                        })
-                                    .setPlayerStartOrPauseListener(new OnPlayerStartOrPauseListener() {
-                                        @Override
-                                        public void onStartOrPause() {
-                                            //对话框
-                                            AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
-                                            builder.setIcon(R.drawable.shangbackground);
-                                            builder.setTitle("暂停挪车");//设置对话框的标题
-                                            builder.setMessage("挪车已暂停，是否继续挪车？");//设置对话框的内容
-                                            builder.setPositiveButton("继续", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
-                                                @Override
-                                                public void onClick(DialogInterface arg0, int arg1) {
-                                                    player.startPlay();
-                                                }
-                                            });
-                                            builder.setNegativeButton("结束", new DialogInterface.OnClickListener() {  //取消按钮
-
-                                                @Override
-                                                public void onClick(DialogInterface arg0, int arg1) {
-                                                    finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
-                                                    startActivity(intent);
-                                                }
-                                            });
-                                            AlertDialog b=builder.create();
-                                            b.show();
-                                        }
-                                    })
-
-                                    .setPlaySource(url5)
-                                    .startPlay();
-
+                            playVideoUrl(url5);
                         }
                         break;
 
                         case 4: {
                             /**上帝*/
-
                             String url6 = "http://ivi.bupt.edu.cn/hls/cctv13.m3u8";
-                            player = new PlayerView(mActivity, rootView)
-                                    .setProcessDurationOrientation(PlayStateParams.PROCESS_PORTRAIT)
-                                    .setScaleType(PlayStateParams.fillparent) //视频界面剪裁设置
-                                    .forbidTouch(false)
-                                    .hideSteam(true)
-                                    .hideMenu(false)
-                                    .hideCenterPlayer(true)
-                                    .hideBack(false)
-                                    .setOnlyFullScreen(true)
-                                    .setNetWorkTypeTie(false)
-                                    .hideRotation(true)
-                                    .hideFullscreen(true)
-                                    .setChargeTie(true, 480)//设置最长播放时间
-                                    .showThumbnail(new OnShowThumbnailListener() {
-                                        @Override
-                                        public void onShowThumbnail(ImageView ivThumbnail) {
-//                                 加载前显示的缩略图
-                                            Glide.with(mContext)
-                                                    .load("http://pic2.nipic.com/20090413/406638_125424003_2.jpg")
-                                                    .placeholder(R.color.cl_default) //加载成功之前占位图
-                                                    .error(R.color.cl_error)//加载错误之后的错误图
-                                                    .into(ivThumbnail);
-                                        }
-                                    })
-                                    .setPlayerBackListener(new OnPlayerBackListener() {
-                            @Override
-                            public void onPlayerBack() {
-                                //对话框
-                                AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
-                                builder.setIcon(R.drawable.shangbackground);
-                                builder.setTitle("结束挪车");//设置对话框的标题
-                                builder.setMessage("您已确定车辆已经抵达目标位置并结束挪车操作吗？");//设置对话框的内容
-                                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        finish();
-                                        Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
-                                        startActivity(intent);
-                                    }
-                                });
-                                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {  //取消按钮
-
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        Toast.makeText(RemoteControl.this, "取消成功",Toast.LENGTH_SHORT).show();
-                                        player.startPlay();
-                                    }
-                                });
-                                AlertDialog b=builder.create();
-                                b.show();
-                                player.onPause();
-                            }
-                        })
-                                    .setPlayerStartOrPauseListener(new OnPlayerStartOrPauseListener() {
-                                        @Override
-                                        public void onStartOrPause() {
-                                            //对话框
-                                            AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
-                                            builder.setIcon(R.drawable.shangbackground);
-                                            builder.setTitle("暂停挪车");//设置对话框的标题
-                                            builder.setMessage("挪车已暂停，是否继续挪车？");//设置对话框的内容
-                                            builder.setPositiveButton("继续", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
-                                                @Override
-                                                public void onClick(DialogInterface arg0, int arg1) {
-                                                    player.startPlay();
-                                                }
-                                            });
-                                            builder.setNegativeButton("结束", new DialogInterface.OnClickListener() {  //取消按钮
-
-                                                @Override
-                                                public void onClick(DialogInterface arg0, int arg1) {
-                                                    finish();
-                                                    Intent intent=new Intent(RemoteControl.this,VideoMonitor.class);
-                                                    startActivity(intent);
-                                                }
-                                            });
-                                            AlertDialog b=builder.create();
-                                            b.show();
-                                        }
-                                    })
-                                    .setPlaySource(url6)
-                                    .startPlay();
-
+                            playVideoUrl(url6);
                         }
                         break;
 
@@ -577,6 +246,95 @@ public class RemoteControl extends Activity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) { }
         });
+
+    }
+
+
+
+    //后四个视频播放器播放
+    public void playVideoUrl( String url){
+        player = new PlayerView(mActivity, rootView)
+                .setProcessDurationOrientation(PlayStateParams.PROCESS_PORTRAIT)
+                .setScaleType(PlayStateParams.fillparent) //视频界面剪裁设置
+                .forbidTouch(false)
+                .hideSteam(true)
+                .hideMenu(false)
+                .hideCenterPlayer(true)
+                .hideBack(false)
+                .setOnlyFullScreen(true)
+                .setNetWorkTypeTie(false)
+                .hideRotation(true)
+                .hideFullscreen(true)
+                .setChargeTie(true, 480)//设置最长播放时间
+                .showThumbnail(new OnShowThumbnailListener() {
+                    @Override
+                    public void onShowThumbnail(ImageView ivThumbnail) {
+//                                 加载前显示的缩略图
+                        Glide.with(mContext)
+                                .load("http://pic2.nipic.com/20090413/406638_125424003_2.jpg")
+                                .placeholder(R.color.cl_default) //加载成功之前占位图
+                                .error(R.color.cl_error)//加载错误之后的错误图
+                                .into(ivThumbnail);
+                    }
+                })
+                .setPlayerBackListener(new OnPlayerBackListener() {
+                    @Override
+                    public void onPlayerBack() {
+                        //对话框
+                        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                        builder.setIcon(R.drawable.shangbackground);
+                        builder.setTitle("结束挪车");//设置对话框的标题
+                        builder.setMessage("您已确定车辆已经抵达目标位置并结束挪车操作吗？");//设置对话框的内容
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                finish();
+                                Intent intent = new Intent(RemoteControl.this, VideoMonitor.class);
+                                startActivity(intent);
+                            }
+                        });
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {  //取消按钮
+
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                Toast.makeText(RemoteControl.this, "取消成功", Toast.LENGTH_SHORT).show();
+                                player.startPlay();
+                            }
+                        });
+                        AlertDialog b = builder.create();
+                        b.show();
+                        player.onPause();
+                    }
+                })
+                .setPlayerStartOrPauseListener(new OnPlayerStartOrPauseListener() {
+                    @Override
+                    public void onStartOrPause() {
+                        //对话框
+                        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                        builder.setIcon(R.drawable.shangbackground);
+                        builder.setTitle("暂停挪车");//设置对话框的标题
+                        builder.setMessage("挪车已暂停，是否继续挪车？");//设置对话框的内容
+                        builder.setPositiveButton("继续", new DialogInterface.OnClickListener() {  //这个是设置确定按钮
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                player.startPlay();
+                            }
+                        });
+                        builder.setNegativeButton("结束", new DialogInterface.OnClickListener() {  //取消按钮
+
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                finish();
+                                Intent intent = new Intent(RemoteControl.this, VideoMonitor.class);
+                                startActivity(intent);
+                            }
+                        });
+                        AlertDialog b = builder.create();
+                        b.show();
+                    }
+                })
+                .setPlaySource(url)
+                .startPlay();
 
     }
 
